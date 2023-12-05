@@ -1,8 +1,12 @@
 import React from "react";
 
 const Note = ({ note }) => {
+  const handleNoteClick = () => {
+    alert(`Note Clicked!\nTitle: ${note.title}\nCreated on: ${note.createdDate.toLocaleString()}`);
+  };
+
   return (
-    <div className="note">
+    <div className="note" onClick={handleNoteClick}>
       <h2>{note.title}</h2>
       <p>{note.content}</p>
       <p>Created on: {note.createdDate.toLocaleString()}</p>
